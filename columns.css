@@ -1,0 +1,32 @@
+/* 分栏容器 */
+.markdown-rendered .column-container {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* 单个列样式 */
+.markdown-rendered .column {
+    flex: 1;
+    min-width: 0; /* 防止内容溢出 */
+    padding: 0 10px;
+}
+
+/* 移动端响应式 */
+@media (max-width: 768px) {
+    .markdown-rendered .column-container {
+        flex-direction: column;
+    }
+}
+
+
+// 可在插件设置中添加以下配置
+interface ColumnsSettings {
+    gap: number;        // 列间距
+    minWidth: number;    // 列最小宽度
+    bgColor: string;     // 背景颜色
+    padding: number;     // 内边距
+}
+
+// 通过注册设置选项实现样式自定义
